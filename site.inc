@@ -5,19 +5,20 @@
 function getDBConnection()
 {
 	$dbhost = "localhost";
-
-	//$dbuser = "root";
-	//$dbuser = "bmcweb_bosenfl";
 	$dbuser = "bmcweb_boseTIH";
-	
-	//$dbpwd = "bosenfl4102";
-	//$dbpwd = "mysql";
 	$dbpwd = "boseTIH2014";
-	
-	
-	//$dbschema = "firstandgo";
-	//$dbschema = "bmcweb_bosenfl";
 	$dbschema = "bmcweb_bosetakeithome";
+
+	$isdebug = false;
+	
+	//$isdebug = true;
+	if($isdebug)
+	{
+		$dbhost = "localhost";
+		$dbuser = "root";
+		$dbpwd = "mysql";
+		$dbschema = "firstandgo";
+	}
 	
 	
 	// get the database connection
@@ -72,12 +73,32 @@ function emailExists($email)
 	$mysqli->close();
 	return $exists;
 }
-function getStores()
+function getUniqueAccountNames()
 {
 	$mysqli = getDBConnection();
 	$myArray = array();
 	$jsonStr = "";
-	if ($result = $mysqli->query("SELECT storename, storenumber FROM stores order by storename ASC"))
+	if ($result = $mysqli->query("SELECT distinct accountname from stores order by accountname ASC"))
+	{
+		while($row = $result->fetch_array(MYSQL_ASSOC))
+		{
+			$myArray[] = $row;
+		}
+		$jsonStr = $jsonStr . json_encode($myArray);
+	}
+
+	$result->close();
+	$mysqli->close();
+	// now print out the json string
+	//$json_string = json_encode($jsonStr, JSON_PRETTY_PRINT);
+	return $jsonStr;
+}
+function getStoresForAccount($accountname)
+{
+	$mysqli = getDBConnection();
+	$myArray = array();
+	$jsonStr = "";
+	if ($result = $mysqli->query("SELECT storename, sapnumber from stores where accountname='" . $accountname . "'"))
 	{
 		while($row = $result->fetch_array(MYSQL_ASSOC))
 		{

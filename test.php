@@ -5,9 +5,15 @@
 require "site.inc";
 
 
-$storesJson = getStores();
+$accountNames = getUniqueAccountNames();
 
-print($storesJson);
+print($accountNames);
+
+//SEARS HOLDING COMPANY
+$stores = getStoresForAccount("SEARS HOLDING COMPANY");
+
+print($stores);
+
 
 
 ?>
