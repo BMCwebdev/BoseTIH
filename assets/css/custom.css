@@ -235,3 +235,7 @@ table {
 	text-shadow: 14px 11px 21px #010101; /* drop shadow */
 	padding: 20px 5%;
 }
+
+.shorten {
+	max-width: 130px;
+}
