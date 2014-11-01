@@ -169,7 +169,8 @@ table {
 
 
 table > * > tr > * {
-       padding: 5px 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
  input {

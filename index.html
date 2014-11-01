@@ -61,7 +61,7 @@ $(document).ready(function(){
 	    <!-- <div class="container"> -->        
 
 				<div class="headbar col-xs-12">
-					<div class="row">
+					<div>
 					<div class="languagechoice col-xs-12 col-sm-6">
 						<p class="center-block"><em>Voir cette page en Français?</em> <strong><a href="indexFR.html">Cliquez ici</a></strong></p>
 					</div>
@@ -114,7 +114,71 @@ $(document).ready(function(){
 							</tr>
 							<tr>
 							    <td>State:*</td>
-							    <td><input type="text" id="state" name="state" ></td>
+							    <td>
+							      <select name="state" id="state"  class="validate(selectstate)">
+							        <option>Select</option>
+							        	  <option value="AK" >AK - Alaska</option>
+							
+							              <option value="AL" >AL - Alabama</option>
+							              <option value="AR" >AR - Arkansas</option>
+							              <option value="AZ" >AZ - Arizona</option>
+							              <option value="CA" >CA - California</option>
+							              <option value="CO" >CO - Colorado</option>
+							              <option value="CT" >CT - Connecticut</option>
+							
+							              <option value="DC" >DC - District of Columbia</option>
+							              <option value="DE" >DE - Delaware</option>
+							              <option value="FL" >FL - Florida</option>
+							              <option value="GA" >GA - Georgia</option>
+							              <option value="HI" >HI - Hawaii</option>
+							              <option value="IA" >IA - Iowa</option>
+							
+							              <option value="ID" >ID - Idaho</option>
+							              <option value="IL" >IL - Illinois</option>
+							              <option value="IN" >IN - Indiana</option>
+							              <option value="KS" >KS - Kansas</option>
+							              <option value="KY" >KY - Kentucky</option>
+							              <option value="LA" >LA - Louisiana</option>
+							
+							              <option value="MA" >MA - Massachusetts</option>
+							              <option value="MD" >MD - Maryland</option>
+							              <option value="ME" >ME - Maine</option>
+							              <option value="MI" >MI - Michigan</option>
+							              <option value="MN" >MN - Minnesota</option>
+							              <option value="MO" >MO - Missouri</option>
+							
+							              <option value="MS" >MS - Mississippi</option>
+							              <option value="MT" >MT - Montana</option>
+							              <option value="NC" >NC - North Carolina</option>
+							              <option value="ND" >ND - North Dakota</option>
+							              <option value="NE" >NE - Nebraska</option>
+							              <option value="NH" >NH - New Hampshire</option>
+							
+							              <option value="NJ" >NJ - New Jersey</option>
+							              <option value="NM" >NM - New Mexico</option>
+							              <option value="NV" >NV - Nevada</option>
+							              <option value="NY" >NY - New York</option>
+							              <option value="OH" >OH - Ohio</option>
+							              <option value="OK" >OK - Oklahoma</option>
+							
+							              <option value="OR" >OR - Oregon</option>
+							              <option value="PA" >PA - Pennsylvania</option>
+							              <option value="RI" >RI - Rhode Island</option>
+							              <option value="SC" >SC - South Carolina</option>
+							              <option value="SD" >SD - South Dakota</option>
+							              <option value="TN" >TN - Tennessee</option>
+							
+							              <option value="TX" >TX - Texas</option>
+							              <option value="UT" >UT - Utah</option>
+							              <option value="VA" >VA - Virginia</option>
+							              <option value="VT" >VT - Vermont</option>
+							              <option value="WA" >WA - Washington</option>
+							              <option value="WI" >WI - Wisconsin</option>
+							
+							              <option value="WV" >WV - West Virginia</option>
+							              <option value="WY" >WY - Wyoming</option>
+							        </select>
+							</td>
 							</tr>
 							<tr>
 							    <td>Zip Code:*</td>
@@ -153,13 +217,8 @@ $(document).ready(function(){
 							    <td><input type="checkbox" id="optinemail" name="optinemail" value="1"></td>
 							</tr>
 							<tr>
-							    <td>Telephone</td>
-							    <td><input type="text" id="storenumber" name="storenumber"></td>
-							</tr>
-							<tr>
 							<td>&nbsp;</td>
-							<td><input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">&nbsp;&nbsp;<br />
-							<input type="reset" class="btn btn-primary"  value="Clear"></td>
+							<td><input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">
 							</tr>
 							</table>
 							</form>
@@ -175,16 +234,17 @@ $(document).ready(function(){
 							<input type="hidden" id="week" name="week" value="9"/>
 							<table border="0" padding="1" cellspacing="1">
 							<tr>
-							    <td>Firstname</td>
-							    <td class="wider"><input type="text" id="firstname" name="firstname" value="firstname"></td>
+							    <td>Email:</td>
+							    <td class="wider"><input type="text" id="firstname" name="firstname" ></td>
 							</tr>
 							<tr>
-							    <td>Lastname</td>
-							    <td><input type="text" id="lastname" name="lastname" value="lastname"></td>
+							    <td>Password:</td>
+							    <td><input type="text" id="lastname" name="lastname" ></td>
 							</tr>
 							<tr>
 							    <td><p class="forgottext"><a href="#">Forgot password?</a> <br /> <a href="#">Need help?</a></p></td>
-							    <td><input  type="button" class="btn btn-primary loginbutton"  value="Submit"></td>
+							    <!-- <td><input  type="button" class="btn btn-primary loginbutton"  value="Submit"></td> -->
+							    <td><strong><p style="font-size:12px;">Login will be available once <br />product registration is open.</p></strong></td>
 							</tr>
 							</table>
 							</div>
