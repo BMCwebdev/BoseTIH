@@ -189,8 +189,13 @@ table {
 	max-width: 85px;
     width: 45%;
     margin-bottom: 10px;
+	font-family: "Bose Gothic";
+
 }
 
+#form1 {
+	font-family: "Bose Gothic";
+}
 
 .btn-primary {
     background-color: #004380;
