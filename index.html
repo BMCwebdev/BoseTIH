@@ -88,6 +88,12 @@ $(document).ready(function(){
 						<p class="enrollmenttext"><em>One enrollment per participant - multiple enrollments will result in program disqualification. See <a href="rules.html" target="_blank"><strong>official rules</strong></a> for details.</em></p>
 					
 							<form id="form1" name="form1" action="processform.php" method="post">
+							        <?php
+							          require_once('recaptchalib.php');
+							          $publickey = "your_public_key"; // you got this from the signup page
+							          echo recaptcha_get_html($publickey);
+							        ?>
+
 							<div class="form-group">
 							<input type="hidden" id="week" name="week" value="9"/>
 							<table border="0" padding="1" cellspacing="1">
