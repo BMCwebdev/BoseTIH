@@ -86,98 +86,75 @@ $(document).ready(function(){
 					<div class="greybox">
 						<div class="greypadding">
 						<p class="enrollmenttext"><em>One enrollment per participant - multiple enrollments will result in program disqualification. See <a href="rules.html" target="_blank"><strong>official rules</strong></a> for details.</em></p>
+						<p>*=required field</p>
 					
 							<form id="form1" name="form1" action="processform.php" method="post">
 							<div class="form-group">
 							<input type="hidden" id="week" name="week" value="9"/>
 							<table border="0" padding="1" cellspacing="1">
 							<tr>
-							    <td>Firstname</td>
-							    <td class="wider"><input type="text" id="firstname" name="firstname" value="firstname"></td>
+							    <td>First Name:*</td>
+							    <td class="wider"><input type="text" id="firstname" name="firstname" ></td>
 							</tr>
 							<tr>
-							    <td>Lastname</td>
-							    <td><input type="text" id="lastname" name="lastname" value="lastname"></td>
+							    <td>Last Name:*</td>
+							    <td><input type="text" id="lastname" name="lastname" ></td>
 							</tr>
 							<tr>
-							    <td>Address 1</td>
-							    <td><input type="text" id="address1" name="address1" value="address1"></td>
+							    <td>Shipping Address:* <br /><span style="font-size:10px;">(sorry, no P.O. boxes)</span></td>
+							    <td><input type="text" id="address1" name="address1" ></td>
 							</tr>
 							<tr>
-							    <td>Address 2</td>
-							    <td><input type="text" id="address2" name="address2" value="address2"></td>
+							    <td>Apartment #:</td>
+							    <td><input type="text" id="address2" name="address2" ></td>
 							</tr>
 							<tr>
-							    <td>City</td>
-							    <td><input type="text" id="city" name="city" value="city"></td>
+							    <td>City:*</td>
+							    <td><input type="text" id="city" name="city" ></td>
 							</tr>
 							<tr>
-							    <td>State</td>
-							    <td><input type="text" id="state" name="state" value="state"></td>
+							    <td>State:*</td>
+							    <td><input type="text" id="state" name="state" ></td>
 							</tr>
 							<tr>
-							    <td>zipcode</td>
-							    <td><input type="text" id="zipcode" name="zipcode" value="zipcode"></td>
+							    <td>Zip Code:*</td>
+							    <td><input type="text" id="zipcode" name="zipcode" ></td>
 							</tr>
 							<tr>
-							    <td>Email</td>
-							    <td><input type="text" id="email" name="email" value="email"></td>
+							    <td>Email:</td>
+							    <td><input type="text" id="email" name="email" ></td>
 							</tr>
 							<tr>
-							    <td>Telephone</td>
-							    <td><input type="text" id="telephone" name="telephone" value="telephone"></td>
+							    <td>Confirm Email:</td>
+							    <td><input type="text" id="telephone" name="telephone" ></td>
 							</tr>
 							<tr>
-							    <td>Password</td>
-							    <td><input type="password" id="pin" name="pin" value=""></td>
+							    <td>Password: <br /><span style="font-size:10px;">(minimum 5 characters)</span></td>
+							    <td><input type="password" id="1" name="pin" ></td>
 							</tr>
 							<tr>
-							    <td>Bose optin</td>
+							    <td>Confirm Password:</td>
+							    <td><input type="password" id="2" name="pin" ></td>
+							</tr>
+							<tr>
+							    <td>Phone Number:</td>
+							    <td><input type="text" id="5" name="pin" ></td>
+							</tr>
+							<tr>
+							    <td>Store Name:</td>
+							    <td><input type="text" id="6" name="optinemail"></td>
+							</tr>
+							<tr>
+							    <td>Store Number /<br />Location:</td>
+							    <td><input type="text" id="storename" name="storename"></td>
+							</tr>
+							<tr>
+							    <td>Please send me <br />Bose email <br />communications:</td>
 							    <td><input type="checkbox" id="optinemail" name="optinemail" value="1"></td>
 							</tr>
 							<tr>
-							    <td>Store Name</td>
-							    <td><input type="text" id="storename" name="storename" value="storename"></td>
-							</tr>
-							<tr>
 							    <td>Telephone</td>
-							    <td><input type="text" id="storenumber" name="storenumber" value="storenumber"></td>
-							</tr>
-							<tr>
-							<td>
-							<!-- GOOGLE CAPTCHA -->
-									<?php
-									
-									require_once('recaptchalib.php');
-									
-									// Get a key from https://www.google.com/recaptcha/admin/create
-									$publickey = "6Lcx4PwSAAAAAHa6T8y4MMurRFzEy2PM4gvMM9OS";
-									$privatekey = "6Lcx4PwSAAAAAHF4RSSRpGRvuZ6OroYN-NEFnNHS";
-									
-									# the response from reCAPTCHA
-									$resp = null;
-									# the error code from reCAPTCHA, if any
-									$error = null;
-									
-									# was there a reCAPTCHA response?
-									if ($_POST["recaptcha_response_field"]) {
-									        $resp = recaptcha_check_answer ($privatekey,
-									                                        $_SERVER["REMOTE_ADDR"],
-									                                        $_POST["recaptcha_challenge_field"],
-									                                        $_POST["recaptcha_response_field"]);
-									
-									        if ($resp->is_valid) {
-									                echo "You got it!";
-									        } else {
-									                # set the error code so that we can display it
-									                $error = $resp->error;
-									        }
-									}
-									echo recaptcha_get_html($publickey, $error);
-									?>
-									    <br/>
-									    <input type="submit" class="btn btn-primary" value="Confirm Captcha" style="max-width:115px;" />
-							</td>
+							    <td><input type="text" id="storenumber" name="storenumber"></td>
 							</tr>
 							<tr>
 							<td>&nbsp;</td>
