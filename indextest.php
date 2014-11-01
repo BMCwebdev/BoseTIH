@@ -177,7 +177,7 @@ if ($_POST["recaptcha_response_field"]) {
 echo recaptcha_get_html($publickey, $error);
 ?>
     <br/>
-    <input type="submit" class="btn btn-primary" value="Confirm Captcha" />
+    <input type="submit" class="btn btn-primary" value="Confirm Captcha" style="padding-left:10px; padding-right:10px;" />
 
 
 								
