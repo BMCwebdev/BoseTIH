@@ -144,42 +144,9 @@ $(document).ready(function(){
 							    <td><input type="text" id="storenumber" name="storenumber" value="storenumber"></td>
 							</tr>
 							<tr>
-							<td>&nbsp;</td>
-							<td><input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">&nbsp;&nbsp;<br />
-							<input type="reset" class="btn btn-primary"  value="Clear"></td>
-							</tr>
-							</table>
-							</form>
-					</div>
-					</div>
-					</div>
-					<div style="height:50px;"></div>
-					<div class="greybox">
-					<div class="enrollnow2"><p>ENROLLED? PLEASE LOG-IN TO REPORT SALES</p></div>
-						<div class="greypadding">					
-							<form id="form1" name="form1" action="processform.php" method="post">
-							<div class="form-group">
-							<input type="hidden" id="week" name="week" value="9"/>
-							<table border="0" padding="1" cellspacing="1">
-							<tr>
-							    <td>Firstname</td>
-							    <td class="wider"><input type="text" id="firstname" name="firstname" value="firstname"></td>
-							</tr>
-							<tr>
-							    <td>Lastname</td>
-							    <td><input type="text" id="lastname" name="lastname" value="lastname"></td>
-							</tr>
-							<tr>
-							    <td><p class="forgottext"><a href="#">Forgot password?</a> <br /> <a href="#">Need help?</a></p></td>
-							    <td><input  type="button" class="btn btn-primary loginbutton"  value="Submit"></td>
-							</tr>
-							</table>
-							</div>
-							</form>
-							
-							
-							
-							    <form action="" method="post">
+							<td>
+								
+<form action="" method="post">
 <?php
 
 require_once('recaptchalib.php');
@@ -213,8 +180,40 @@ echo recaptcha_get_html($publickey, $error);
     <input type="submit" value="submit" />
     </form>
 
-
-
+								
+							</td>
+							<td><input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">&nbsp;&nbsp;<br />
+							<input type="reset" class="btn btn-primary"  value="Clear"></td>
+							</tr>
+							</table>
+							</form>
+					</div>
+					</div>
+					</div>
+					<div style="height:50px;"></div>
+					<div class="greybox">
+					<div class="enrollnow2"><p>ENROLLED? PLEASE LOG-IN TO REPORT SALES</p></div>
+						<div class="greypadding">					
+							<form id="form1" name="form1" action="processform.php" method="post">
+							<div class="form-group">
+							<input type="hidden" id="week" name="week" value="9"/>
+							<table border="0" padding="1" cellspacing="1">
+							<tr>
+							    <td>Firstname</td>
+							    <td class="wider"><input type="text" id="firstname" name="firstname" value="firstname"></td>
+							</tr>
+							<tr>
+							    <td>Lastname</td>
+							    <td><input type="text" id="lastname" name="lastname" value="lastname"></td>
+							</tr>
+							<tr>
+							    <td><p class="forgottext"><a href="#">Forgot password?</a> <br /> <a href="#">Need help?</a></p></td>
+							    <td><input  type="button" class="btn btn-primary loginbutton"  value="Submit"></td>
+							</tr>
+							</table>
+							</div>
+						
+							</form>
 						</div>
 					</div>
 					</div>
