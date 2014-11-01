@@ -44,6 +44,7 @@ function verifyLogin($username, $pin)
 	// this needs to verify username / password
 	$mysqli = getDBConnection();
 	$storedPin = "";
+	$verified = false;
 	/* Create a prepared statement */
 	if($stmt = $mysqli -> prepare("SELECT pin FROM enrollments WHERE email=?")) {
 	      $stmt -> bind_param("s", $username);
@@ -55,7 +56,13 @@ function verifyLogin($username, $pin)
 	}
 	$mysqli->close();
 	// now see if the stored matches what we got in
-	$verified = password_verify($pin, $storedPin);
+	// this is the newer method will not work on brians server
+	//$verified = password_verify($pin, $storedPin);
+	
+	// switching to MD5 less secure
+	if($storedPin == md5($pin))
+	   $verified = true;
+	
 	return $verified;
 }
 function emailExists($email)
@@ -78,7 +85,7 @@ function getUniqueAccountNames()
 	$mysqli = getDBConnection();
 	$myArray = array();
 	$jsonStr = "";
-	if ($result = $mysqli->query("SELECT distinct accountname from stores order by accountname ASC"))
+	if ($result = $mysqli->query("SELECT distinct account from stores order by account ASC"))
 	{
 		while($row = $result->fetch_array(MYSQL_ASSOC))
 		{
@@ -95,10 +102,12 @@ function getUniqueAccountNames()
 }
 function getStoresForAccount($accountname)
 {
+	print($accountname);
+	
 	$mysqli = getDBConnection();
 	$myArray = array();
 	$jsonStr = "";
-	if ($result = $mysqli->query("SELECT storename, sapnumber from stores where accountname='" . $accountname . "'"))
+	if ($result = $mysqli->query("SELECT * from stores where account='" . $accountname . "'"))// where account='" . $accountname . "'"))
 	{
 		while($row = $result->fetch_array(MYSQL_ASSOC))
 		{
@@ -148,7 +157,9 @@ function storeEnrollmentForm()
 		$email = cleanStringValues($_POST["email"]);
 		$telephone = cleanStringValues($_POST["telephone"]);
 		// need to store password_hash("rasmuslerdorf", PASSWORD_DEFAULT)
-		$pin = password_hash(cleanStringValues($_POST["pin"]),PASSWORD_DEFAULT);
+		// can't use the password_hash on older versions switching to MD5
+		//$pin = password_hash(cleanStringValues($_POST["pin"]),PASSWORD_DEFAULT);
+		$pin = md5(cleanStringValues($_POST["pin"]));
 		$storenumber = cleanStringValues($_POST["storenumber"]);
 		$storename = cleanStringValues($_POST["storename"]);
 		// see if nfl is submitted it's a chcekbox so only when it is there
