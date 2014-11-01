@@ -144,7 +144,7 @@ $(document).ready(function(){
 							    <td><input type="text" id="storenumber" name="storenumber" value="storenumber"></td>
 							</tr>
 							<tr>
-							<td>
+							<td class="center-block">
 								
 
 <?php
