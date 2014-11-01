@@ -177,16 +177,18 @@ if ($_POST["recaptcha_response_field"]) {
 echo recaptcha_get_html($publickey, $error);
 ?>
     <br/>
-    <input type="submit" class="btn btn-primary" value="Confirm Captcha" style="max-width:115px;" />
+    <input type="submit" class="btn btn-primary" value="Submit" style="max-width:115px;" />
 
 
 								
 							</td>
 							</tr>
+<!--
 							<tr>
 							<td><input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">&nbsp;&nbsp;<br />
 							<input type="reset" class="btn btn-primary"  value="Clear"></td>
 							</tr>
+-->
 							</table>
 							</form>
 					</div>
