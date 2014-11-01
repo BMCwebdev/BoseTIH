@@ -8,7 +8,7 @@ $accountNames = getUniqueAccountNames();
 print($accountNames);
 
 //SEARS HOLDING COMPANY
-$stores = getStoresForAccount("SEARS HOLDING COMPANY");
+$stores = getStoresForAccount("BRANDSMART USA");
 
 print($stores);
 

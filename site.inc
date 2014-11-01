@@ -85,7 +85,7 @@ function getUniqueAccountNames()
 	$mysqli = getDBConnection();
 	$myArray = array();
 	$jsonStr = "";
-	if ($result = $mysqli->query("SELECT distinct accountname from stores order by accountname ASC"))
+	if ($result = $mysqli->query("SELECT distinct account from stores order by account ASC"))
 	{
 		while($row = $result->fetch_array(MYSQL_ASSOC))
 		{
@@ -102,10 +102,12 @@ function getUniqueAccountNames()
 }
 function getStoresForAccount($accountname)
 {
+	print($accountname);
+	
 	$mysqli = getDBConnection();
 	$myArray = array();
 	$jsonStr = "";
-	if ($result = $mysqli->query("SELECT storename, sapnumber, address1, address2, city, state from stores where accountname='" . $accountname . "'"))
+	if ($result = $mysqli->query("SELECT * from stores where account='" . $accountname . "'"))// where account='" . $accountname . "'"))
 	{
 		while($row = $result->fetch_array(MYSQL_ASSOC))
 		{
