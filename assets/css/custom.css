@@ -239,3 +239,7 @@ table {
 .shorten {
 	max-width: 130px;
 }
+
+.languagechoice a {
+	color: white;
+}
