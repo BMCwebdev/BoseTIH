@@ -146,7 +146,7 @@ $(document).ready(function(){
 							<tr>
 							<td>
 								
-<form action="" method="post">
+
 <?php
 
 require_once('recaptchalib.php');
@@ -177,8 +177,8 @@ if ($_POST["recaptcha_response_field"]) {
 echo recaptcha_get_html($publickey, $error);
 ?>
     <br/>
-    <input type="submit" value="submit" />
-    </form>
+    <input type="submit" class="btn btn-primary" value="Confirm Captcha" />
+
 
 								
 							</td>
