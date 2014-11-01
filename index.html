@@ -175,19 +175,17 @@ $(document).ready(function(){
 							</tr>
 							</table>
 							</div>
-									    <script type="text/javascript"
-									       src="http://www.google.com/recaptcha/api/challenge?k=6Lcx4PwSAAAAAHa6T8y4MMurRFzEy2PM4gvMM9OS">
-									    </script>
-									    <noscript>
-									       <iframe src="http://www.google.com/recaptcha/api/noscript?k=6Lcx4PwSAAAAAHa6T8y4MMurRFzEy2PM4gvMM9OS"
-									           height="300" width="500" frameborder="0"></iframe><br>
-									       <textarea name="recaptcha_challenge_field" rows="3" cols="40">
-									       </textarea>
-									       <input type="hidden" name="recaptcha_response_field"
-									           value="manual_challenge">
-									    </noscript>
 							</form>
 							
+							      <form method="post" action="verify.php">
+        <?php
+          require_once('recaptchalib.php');
+          $publickey = "6Lcx4PwSAAAAAHa6T8y4MMurRFzEy2PM4gvMM9OS"; // you got this from the signup page
+          echo recaptcha_get_html($publickey);
+        ?>
+        <input type="submit" />
+      </form>
+
 							
 						</div>
 					</div>
