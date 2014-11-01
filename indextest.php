@@ -182,6 +182,8 @@ echo recaptcha_get_html($publickey, $error);
 
 								
 							</td>
+							</tr>
+							<tr>
 							<td><input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">&nbsp;&nbsp;<br />
 							<input type="reset" class="btn btn-primary"  value="Clear"></td>
 							</tr>
