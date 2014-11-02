@@ -255,7 +255,10 @@
 							    <td><input type="checkbox" id="optinemail" name="optinemail" value="1"></td>
 							</tr>
 
-<tr style="position:relative"><td></td><td>
+							</table>
+							
+							
+							<div style="position:relative">
 <?php
 
 require_once('recaptchalib.php');
@@ -287,8 +290,11 @@ echo recaptcha_get_html($publickey, $error);
 ?>
 
 <input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">
-</tr></td>
-							</table>
+</div>
+
+
+
+
 							</form>
 					</div>
 					</div>
