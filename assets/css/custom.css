@@ -28,7 +28,7 @@ body {
 		top: -10px;
 		}
 		.captchadiv {
-			left:-26px;
+			left:0px;
 		}
     }
 
@@ -41,6 +41,9 @@ body {
 		position: relative;
 		top: -22pxpx;
 		}
+		.captchadiv {
+			left:0px;
+		}
     }
 
     /* Medium Devices, Desktops */
@@ -52,6 +55,9 @@ body {
 		position: relative;
 		top: -22px;
 		}
+		.captchadiv {
+			left:0px;
+		}
     }
 
     /* Large Devices, Wide Screens */
@@ -62,6 +68,9 @@ body {
 		.howitworks img {
 		position: relative;
 		top: -25px;
+		}
+		.captchadiv {
+			left:0px;
 		}
     }
     
