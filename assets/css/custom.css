@@ -147,7 +147,7 @@ body {
 
 .enrollnow {
 	color: #080808; /* text color */
-	font-family: "Bose Gothic";
+	font-family: "BoseGothicRegular";
 	font-size: 38px;
 	margin-top: 20px;
 	margin-left: auto;
@@ -157,7 +157,7 @@ body {
 
 .enrollnow2 {
 	color: #080808; /* text color */
-	font-family: "Bose Gothic";
+	font-family: "BoseGothicRegular";
 	font-size: 20px;
 	margin-top: 20px;
 	margin-left: auto;
@@ -194,7 +194,7 @@ body {
 .enrollmenttext {
 	text-align: center;
 	color: #00417f; /* text color */
-	font-family: "Bose Gothic";
+	font-family: "BoseGothicRegular";
 	font-size: 14px;
 }
 
@@ -235,24 +235,24 @@ table {
 	max-width: 85px;
     width: 45%;
     margin-bottom: 10px;
-	font-family: "Bose Gothic";
+	font-family: "BoseGothicRegular";
 
 }
 
 #form1 {
-	font-family: "Bose Gothic";
+	font-family: "BoseGothicRegular";
 }
 
 #form2 .btn {
 	max-width: 85px;
     width: 45%;
     margin-bottom: 10px;
-	font-family: "Bose Gothic";
+	font-family: "BoseGothicRegular";
 
 }
 
 #form2 {
-	font-family: "Bose Gothic";
+	font-family: "BoseGothicRegular";
 }
 
 .btn-primary {
@@ -281,7 +281,7 @@ table {
 .forgottext, .forgottext a {
 	color: #ff0000;
 	font-size: 12px;
-	font-family: "Bose Gothic";
+	font-family: "BoseGothicRegular";
 }
 
 .footer {
@@ -292,7 +292,7 @@ table {
 
 .footer p {
 	color: #b6b5b5; /* text color */
-	font-family: "Bose Gothic";
+	font-family: "BoseGothicRegular";
 	font-size: 1em;
 	font-weight: normal;
 	text-shadow: 14px 11px 21px #010101; /* drop shadow */
@@ -308,7 +308,7 @@ table {
 }
 
 .center-block {
-	font-family: "Bose Gothic";
+	font-family: "BoseGothicRegular";
 }
 .wider {
 	display: inline-block;
