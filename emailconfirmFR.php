@@ -8,7 +8,8 @@ $message = "
     <title>Programme &#171; Gagnez-moi &#187; de Bose &ndash; confirmation de votre inscription</title>
 </head>
 
-<body style="max-width:920px;margin-left:auto;margin-right:auto;">
+<body>
+<div style="max-width:920px;margin-left:auto;margin-right:auto;">
 <div>
 <img src="/assets/images/hero.jpg" alt="hero" style="width:100%;" />
 </div>
@@ -32,6 +33,7 @@ $message = "
     [@@@@@@@@@@@@@@rules.html@@@@@@@@@@@@@@@@@]<br />
     <br />
     <a href="@@@@@@@@@@@@@@@@@">Cliquez ici</a> pour être retiré de notre liste d’envoi.</p>
+</div>
 </div>
 </body>
 </html>
