@@ -19,6 +19,9 @@
 	<link type="text/css" href="assets/webfont/stylesheet.css" rel="stylesheet" />
 
 
+<!-- 	<link type="text/css" href="assets/css/validationEngine.jquery.css" rel="stylesheet" /> -->
+
+
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <!--     <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
@@ -28,7 +31,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+<script language="javascript" type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
 <script language="javascript" type="text/javascript">
     // bring it home : 31-OCT-2014
     // chad nale chad.nale@gmail.com
@@ -37,11 +40,23 @@
     {
        document.getElementById("form1").submit();
     }
-    
-</script>
-
-<script>
-$(document).ready(function(){
+    function getStoreNumber()
+    {
+      var selectedAccount = document.getElementById("storename").value;
+      if (null != selectedAccount) {
+	$.ajax({
+	  type: "POST",
+	  url: "storenames.php",
+	  data: { accountname: selectedAccount }
+	})
+	  .done(function( msg ) {
+	    $("select#storenumber").html(msg);
+	  });
+	  
+      }
+    }
+  
+  $(document).ready(function(){
     var Input = $('input[name=kp1_description]');
     var default_value = Input.val();
 
@@ -50,8 +65,24 @@ $(document).ready(function(){
     }).blur(function(){
         if(Input.val().length == 0) Input.val(default_value);
     });
-})​
+    
+    // fetch list of account names....
+    fetchAccountName();
+  });
+  // we need the list of account names
+  function fetchAccountName()
+  {
+   $.ajax({
+  type: "POST",
+  url: "accountnames.php",
+  data: { name: "John", location: "Boston" }
+})
+  .done(function( msg ) {
+    $("select#storename").html(msg);
+  });
+  }
  </script>
+
 
 
 	</head>
@@ -61,7 +92,7 @@ $(document).ready(function(){
 	    <!-- <div class="container"> -->        
 
 				<div class="headbar col-xs-12">
-					<div class="row">
+					<div>
 					<div class="languagechoice col-xs-12 col-sm-6">
 						<p class="center-block"><em>Voir cette page en Français?</em> <strong><a href="indexFR.html">Cliquez ici</a></strong></p>
 					</div>
@@ -79,74 +110,151 @@ $(document).ready(function(){
 				
 				
 				
-				<div>
-				<div class="formarea form col-xs-12 col-sm-6">
+				<div class="main-container">
+				
+				
+					<div class="howitworks form col-xs-12 col-sm-6 col-sm-push-6">
+						<img src="assets/images/howitworks.png" alt="howitworks" />
+					</div>
+					
 
-										<div class="enrollnow"><p>ENROLL NOW.</p></div>
+					<div class="formarea form col-xs-12 col-sm-6 col-sm-pull-6">
+
+					<div class="enrollnow"><p>ENROLL NOW.</p></div>
 					<div class="greybox">
 						<div class="greypadding">
 						<p class="enrollmenttext"><em>One enrollment per participant - multiple enrollments will result in program disqualification. See <a href="rules.html" target="_blank"><strong>official rules</strong></a> for details.</em></p>
+						<p>*=required field</p>
 					
 							<form id="form1" name="form1" action="processform.php" method="post">
 							<div class="form-group">
 							<input type="hidden" id="week" name="week" value="9"/>
 							<table border="0" padding="1" cellspacing="1">
 							<tr>
-							    <td>Firstname</td>
-							    <td class="wider"><input type="text" id="firstname" name="firstname" value="firstname"></td>
+							    <td>First Name:*</td>
+							    <td ><input type="text" id="firstname" name="firstname" class="validate[required]" ></td>
 							</tr>
 							<tr>
-							    <td>Lastname</td>
-							    <td><input type="text" id="lastname" name="lastname" value="lastname"></td>
+							    <td>Last Name:*</td>
+							    <td><input type="text" id="lastname" name="lastname" class="validate[required]"></td>
 							</tr>
 							<tr>
-							    <td>Address 1</td>
-							    <td><input type="text" id="address1" name="address1" value="address1"></td>
+							    <td>Shipping Address:* <br /><span style="font-size:10px;">(sorry, no P.O. boxes)</span></td>
+							    <td><input type="text" id="address1" name="address1" class="validate[required]" ></td>
 							</tr>
 							<tr>
-							    <td>Address 2</td>
-							    <td><input type="text" id="address2" name="address2" value="address2"></td>
+							    <td>Apartment #:</td>
+							    <td><input type="text" id="address2" name="address2" ></td>
 							</tr>
 							<tr>
-							    <td>City</td>
-							    <td><input type="text" id="city" name="city" value="city"></td>
+							    <td>City:*</td>
+							    <td><input type="text" id="city" name="city" class="validate[required]" ></td>
 							</tr>
 							<tr>
-							    <td>State</td>
-							    <td><input type="text" id="state" name="state" value="state"></td>
+							    <td>State:*</td>
+							    <td>
+							      <select name="state" id="state"  class="validate(selectstate)">
+							        <option>Select</option>
+							        	  <option value="AK" >AK - Alaska</option>
+							
+							              <option value="AL" >AL - Alabama</option>
+							              <option value="AR" >AR - Arkansas</option>
+							              <option value="AZ" >AZ - Arizona</option>
+							              <option value="CA" >CA - California</option>
+							              <option value="CO" >CO - Colorado</option>
+							              <option value="CT" >CT - Connecticut</option>
+							
+							              <option value="DC" >DC - District of Columbia</option>
+							              <option value="DE" >DE - Delaware</option>
+							              <option value="FL" >FL - Florida</option>
+							              <option value="GA" >GA - Georgia</option>
+							              <option value="HI" >HI - Hawaii</option>
+							              <option value="IA" >IA - Iowa</option>
+							
+							              <option value="ID" >ID - Idaho</option>
+							              <option value="IL" >IL - Illinois</option>
+							              <option value="IN" >IN - Indiana</option>
+							              <option value="KS" >KS - Kansas</option>
+							              <option value="KY" >KY - Kentucky</option>
+							              <option value="LA" >LA - Louisiana</option>
+							
+							              <option value="MA" >MA - Massachusetts</option>
+							              <option value="MD" >MD - Maryland</option>
+							              <option value="ME" >ME - Maine</option>
+							              <option value="MI" >MI - Michigan</option>
+							              <option value="MN" >MN - Minnesota</option>
+							              <option value="MO" >MO - Missouri</option>
+							
+							              <option value="MS" >MS - Mississippi</option>
+							              <option value="MT" >MT - Montana</option>
+							              <option value="NC" >NC - North Carolina</option>
+							              <option value="ND" >ND - North Dakota</option>
+							              <option value="NE" >NE - Nebraska</option>
+							              <option value="NH" >NH - New Hampshire</option>
+							
+							              <option value="NJ" >NJ - New Jersey</option>
+							              <option value="NM" >NM - New Mexico</option>
+							              <option value="NV" >NV - Nevada</option>
+							              <option value="NY" >NY - New York</option>
+							              <option value="OH" >OH - Ohio</option>
+							              <option value="OK" >OK - Oklahoma</option>
+							
+							              <option value="OR" >OR - Oregon</option>
+							              <option value="PA" >PA - Pennsylvania</option>
+							              <option value="RI" >RI - Rhode Island</option>
+							              <option value="SC" >SC - South Carolina</option>
+							              <option value="SD" >SD - South Dakota</option>
+							              <option value="TN" >TN - Tennessee</option>
+							
+							              <option value="TX" >TX - Texas</option>
+							              <option value="UT" >UT - Utah</option>
+							              <option value="VA" >VA - Virginia</option>
+							              <option value="VT" >VT - Vermont</option>
+							              <option value="WA" >WA - Washington</option>
+							              <option value="WI" >WI - Wisconsin</option>
+							
+							              <option value="WV" >WV - West Virginia</option>
+							              <option value="WY" >WY - Wyoming</option>
+							        </select>
+							</td>
 							</tr>
 							<tr>
-							    <td>zipcode</td>
-							    <td><input type="text" id="zipcode" name="zipcode" value="zipcode"></td>
+							    <td>Zip Code:*</td>
+							    <td><input type="text" id="zipcode" name="zipcode" class="validate[required]" ></td>
 							</tr>
 							<tr>
-							    <td>Email</td>
-							    <td><input type="text" id="email" name="email" value="email"></td>
+							    <td>Email:</td>
+							    <td><input type="text" id="email" name="email" ></td>
 							</tr>
 							<tr>
-							    <td>Telephone</td>
-							    <td><input type="text" id="telephone" name="telephone" value="telephone"></td>
+							    <td>Confirm Email:</td>
+							    <td><input type="text" id="email" name="email" ></td>
 							</tr>
 							<tr>
-							    <td>Password</td>
-							    <td><input type="password" id="pin" name="pin" value=""></td>
+							    <td>Password: <br /><span style="font-size:10px;">(minimum 5 characters)</span></td>
+							    <td><input type="password" id="pin" name="pin" ></td>
 							</tr>
 							<tr>
-							    <td>Bose optin</td>
+							    <td>Confirm Password:</td>
+							    <td><input type="password" id="pin" name="pin" ></td>
+							</tr>
+							<tr>
+							    <td>Phone Number:</td>
+							    <td><input type="text" id="phone" name="phone" ></td>
+							</tr>
+							<tr>
+							    <td>Store Name:</td>
+							    <td><select id="storename" name="storename" size="1" class="validate(selectstore)"  onChange="javascript:getStoreNumber();"></td>
+							</tr>
+							<tr>
+							    <td>Store Number /<br />Location:</td>
+							    <td><select id="storenumber" name="storenumber" style="min-width:90%"></select></td>
+							</tr>
+							<tr>
+							    <td>Please send me <br />Bose email <br />communications:</td>
 							    <td><input type="checkbox" id="optinemail" name="optinemail" value="1"></td>
 							</tr>
 							<tr>
-							    <td>Store Name</td>
-							    <td><input type="text" id="storename" name="storename" value="storename"></td>
-							</tr>
-							<tr>
-							    <td>Telephone</td>
-							    <td><input type="text" id="storenumber" name="storenumber" value="storenumber"></td>
-							</tr>
-							<tr>
-							<td class="center-block">
-								
-
 <?php
 
 require_once('recaptchalib.php');
@@ -176,19 +284,9 @@ if ($_POST["recaptcha_response_field"]) {
 }
 echo recaptcha_get_html($publickey, $error);
 ?>
-    <br/>
-    <input type="submit" class="btn btn-primary" value="Submit" style="max-width:115px;" />
 
-
-								
-							</td>
+							<td><input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">
 							</tr>
-<!--
-							<tr>
-							<td><input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">&nbsp;&nbsp;<br />
-							<input type="reset" class="btn btn-primary"  value="Clear"></td>
-							</tr>
--->
 							</table>
 							</form>
 					</div>
@@ -198,25 +296,25 @@ echo recaptcha_get_html($publickey, $error);
 					<div class="greybox">
 					<div class="enrollnow2"><p>ENROLLED? PLEASE LOG-IN TO REPORT SALES</p></div>
 						<div class="greypadding">					
-							<form id="form1" name="form1" action="processform.php" method="post">
+							<form id="form2" name="form1" action="" method="">
 							<div class="form-group">
 							<input type="hidden" id="week" name="week" value="9"/>
 							<table border="0" padding="1" cellspacing="1">
 							<tr>
-							    <td>Firstname</td>
-							    <td class="wider"><input type="text" id="firstname" name="firstname" value="firstname"></td>
+							    <td>Email:</td>
+							    <td ><input type="text" id="loginemail" name="loginemail" ></td>
 							</tr>
 							<tr>
-							    <td>Lastname</td>
-							    <td><input type="text" id="lastname" name="lastname" value="lastname"></td>
+							    <td>Password:</td>
+							    <td><input type="text" id="loginpassword" name="loginpassword" ></td>
 							</tr>
 							<tr>
 							    <td><p class="forgottext"><a href="#">Forgot password?</a> <br /> <a href="#">Need help?</a></p></td>
-							    <td><input  type="button" class="btn btn-primary loginbutton"  value="Submit"></td>
+							    <!-- <td><input  type="button" class="btn btn-primary loginbutton"  value="Submit"></td> -->
+							    <td><strong><p style="font-size:12px;">Login will be available once <br />product registration is open.</p></strong></td>
 							</tr>
 							</table>
 							</div>
-						
 							</form>
 						</div>
 					</div>
@@ -224,13 +322,6 @@ echo recaptcha_get_html($publickey, $error);
 
 					
 
-
-					
-					
-					<div class="howitworks form col-xs-12 col-sm-6">
-						<img src="assets/images/howitworks.png" alt="howitworks" />
-					</div>
-					
 					<div class="clearfix"></div>
 					
 					<div class="footer col-xs-12">
@@ -238,23 +329,24 @@ echo recaptcha_get_html($publickey, $error);
 					</div>
 					
 					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-
-
-					
-					
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+<!--
+	<script src="assets/js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+-->
+<!--
+		<script>
+		jQuery(document).ready(function(){
+-->
+<!--
+			// binds form submission and fields to the validation engine
+			jQuery("#form1").validationEngine();
+		});
+            
+	</script>
+-->
+
 	</body>
 	</html>
