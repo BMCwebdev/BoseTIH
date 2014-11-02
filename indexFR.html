@@ -17,6 +17,9 @@
     <link href="assets/css/custom.css" rel="stylesheet">
     
 	<link type="text/css" href="assets/webfont/stylesheet.css" rel="stylesheet" />
+	
+	<link type="text/css" href="assets/css/validationEngine.jquery.css" rel="stylesheet" />
+
 
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -85,32 +88,32 @@
 							<input type="hidden" id="week" name="week" value="9"/>
 							<table border="0" padding="1" cellspacing="1">
 							<tr>
-							    <td class="shorten">Prénom</td>
-							    <td class="wider"><input type="text" id="firstname" name="firstname" ></td>
+							    <td class="shorten">Prénom:*</td>
+							    <td class="wider"><input type="text" id="firstname" name="firstname" class="validate[required]" ></td>
 							</tr>
 							<tr>
-							    <td class="shorten">Nom de famille</td>
-							    <td><input type="text" id="lastname" name="lastname" ></td>
+							    <td class="shorten">Nom de famille:*</td>
+							    <td><input type="text" id="lastname" name="lastname" class="validate[required]" ></td>
 							</tr>
 							<tr>
-							    <td class="shorten">Adresse d’expédition <br />(pas de case postale, s.v.p.)</td>
-							    <td><input type="text" id="address1" name="address1"></td>
+							    <td class="shorten">Adresse d’expédition <br />(pas de case postale, s.v.p.):*</td>
+							    <td><input type="text" id="address1" name="address1" class="validate[required]"></td>
 							</tr>
 							<tr>
 							    <td class="shorten">No. d’appartement</td>
 							    <td><input type="text" id="address2" name="address2"></td>
 							</tr>
 							<tr>
-							    <td class="shorten">Ville</td>
-							    <td><input type="text" id="city" name="city"></td>
+							    <td class="shorten">Ville:*</td>
+							    <td><input type="text" id="city" name="city" class="validate[required]"></td>
 							</tr>
 							<tr>
-							    <td class="shorten">État/Province</td>
-							    <td><input type="text" id="state" name="state" ></td>
+							    <td class="shorten">État/Province:*</td>
+							    <td><input type="text" id="state" name="state" class="validate[required]" ></td>
 							</tr>
 							<tr>
-							    <td class="shorten">Code postal</td>
-							    <td><input type="text" id="zipcode" name="zipcode" ></td>
+							    <td class="shorten">Code postal:*</td>
+							    <td><input type="text" id="zipcode" name="zipcode" class="validate[required]" ></td>
 							</tr>
 							<tr>
 							    <td class="shorten">Courriel</td>
@@ -209,5 +212,14 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.validationEngine-fr.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		jQuery(document).ready(function(){
+			// binds form submission and fields to the validation engine
+			jQuery("#form1").validationEngine();
+		});
+            
+	</script>
 	</body>
 	</html>
