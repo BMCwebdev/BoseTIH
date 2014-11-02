@@ -125,7 +125,7 @@ function getStoresForAccount($accountname)
 	return $jsonStr;
 }
 // this will be the code that does the enrollment entry
-function storeEnrollmentForm()
+function storeEnrollmentForm($isFrench)
 {
 	$passedEmail = cleanStringValues($_POST["email"]);
 	if(0 == strlen($passedEmail) || true == emailExists($passedEmail))
@@ -181,6 +181,12 @@ function storeEnrollmentForm()
 		die("fatal error");
 	}
 	$dbConn->close();
+	
+	// if here we are ok so send email
+	if(true == $isFrench)
+		welcomeEmailFR($firstname, $email);
+	else
+		welcomeEmailEN($firstname, $email);
 	return "ok";
 	
 }
