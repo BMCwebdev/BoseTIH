@@ -29,9 +29,8 @@ $message = "
     <br />
     Encore une fois, merci de prendre part au programme et bonne chance!<br />
     <br />
-    [@@@@@@@@@@@@@@rules.html@@@@@@@@@@@@@@@@@]<br />
+    <a href="https://bose-bringithome.perfectprize.com/rulesFR.html">les règlements officiels de participation</a>
     <br />
-    <a href="@@@@@@@@@@@@@@@@@">Cliquez ici</a> pour être retiré de notre liste d’envoi.</p>
 </div>
 </div>
 </body>

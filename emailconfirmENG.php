@@ -29,9 +29,8 @@ $message = "
     <br />
     Thanks again for joining our promotion, and good luck!<br />
     <br />
-    [Official Rules link@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@]<br />
+    <a href="https://bose-bringithome.perfectprize.com/rules.html">Official Rules</a>
     <br />
-    <a href="@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@">Click here</a> to be removed from our email list.</p>
 </body>
 </html>
 ";
