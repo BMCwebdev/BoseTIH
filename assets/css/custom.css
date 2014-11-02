@@ -310,6 +310,16 @@ table {
 .center-block {
 	font-family: "BoseGothicRegular";
 }
+
+.languageswitch {
+	font-family: "BoseGothicOblique";
+}
+
+
+.languageswitchbold {
+	font-family: "BoseGothicBold";
+}
+
 .wider {
 	display: inline-block;
 }
