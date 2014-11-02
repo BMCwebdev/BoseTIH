@@ -254,7 +254,8 @@
 							    <td>Please send me <br />Bose email <br />communications:</td>
 							    <td><input type="checkbox" id="optinemail" name="optinemail" value="1"></td>
 							</tr>
-							<div style="position:relative;">
+
+<tr style="position:relative">
 <?php
 
 require_once('recaptchalib.php');
@@ -286,7 +287,7 @@ echo recaptcha_get_html($publickey, $error);
 ?>
 
 <input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">
-</div>
+</tr>
 							</table>
 							</form>
 					</div>
