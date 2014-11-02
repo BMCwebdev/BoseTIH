@@ -6,6 +6,8 @@ require "site.inc";
 $firstname = "chad";
 $email = "chad.nale@gmail.com";
 
+$result = welcomeEmailEN($firstname,$email);
 
+print("email sent was = " . $result);
 
 ?>

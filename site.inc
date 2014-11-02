@@ -226,7 +226,8 @@ function welcomeEmailEN($firsname, $email)
 	// mail this out...
 	$headers = "From: bringithome@email-hub.com";
 
-	mail($email,$subject,$message,$headers);
+	$result = mail($email,$subject,$message,$headers);
+	return $result;
 
 }
 ?>
