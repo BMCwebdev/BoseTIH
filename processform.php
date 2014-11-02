@@ -11,7 +11,7 @@ if(0 < strpos($_SERVER["HTTP_REFERER"], "indexFR.html"))
 }
 
 // this is the processing page for the sweepstake form
- $result = storeEnrollmentForm();
+ $result = storeEnrollmentForm($isFrench);
  if($result == "Email exists already...")
  {
     die("Email already exists....");
