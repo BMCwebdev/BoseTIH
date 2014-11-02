@@ -9,7 +9,7 @@ $message = "
 </head>
 
 <body>
-<div style="max-width:920px;margin-left:auto;margin-right:auto;">
+<div style="max-width:940px;margin-left:auto;margin-right:auto;">
 <div>
 <img src="/assets/images/hero.jpg" alt="hero" style="width:100%;" />
 </div>
