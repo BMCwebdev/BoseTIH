@@ -19,6 +19,9 @@ body {
 		.select[multiple], select[size] {
 			width: 36%;
 		}
+		#storenumber {
+			width: 36%;
+		}
     }
 
     /* Extra Small Devices, Phones */ 
@@ -34,6 +37,9 @@ body {
 			left:0px;
 		}
 		.select[multiple], select[size] {
+			width: 90%;
+		}
+		#storenumber {
 			width: 90%;
 		}
     }
@@ -53,6 +59,9 @@ body {
 		.select[multiple], select[size] {
 			width: 90%;
 		}
+		#storenumber {
+			width: 90%;
+		}
     }
 
     /* Medium Devices, Desktops */
@@ -70,6 +79,9 @@ body {
 		.select[multiple], select[size] {
 			width: 90%;
 		}
+		#storenumber {
+			width: 90%;
+		}
     }
 
     /* Large Devices, Wide Screens */
@@ -85,6 +97,9 @@ body {
 			left:0px;
 		}
 		.select[multiple], select[size] {
+			width: 90%;
+		}
+		#storenumber {
 			width: 90%;
 		}
     }
