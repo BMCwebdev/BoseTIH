@@ -265,3 +265,6 @@ table {
 .center-block {
 	font-family: "Bose Gothic";
 }
+.wider {
+	display: inline-block;
+}
