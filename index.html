@@ -19,6 +19,11 @@
 	<link type="text/css" href="assets/webfont/stylesheet.css" rel="stylesheet" />
 
 
+
+	<link type="text/css" href="assets/validationEngine.jquery.css" rel="stylesheet" />
+	<script src="assets/js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <!--     <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
@@ -52,6 +57,14 @@ $(document).ready(function(){
     });
 })​
  </script>
+
+	<script>
+		jQuery(document).ready(function(){
+			// binds form submission and fields to the validation engine
+			jQuery("#form1").validationEngine();
+		});
+            
+	</script>
 
 
 	</head>
@@ -101,7 +114,7 @@ $(document).ready(function(){
 							<table border="0" padding="1" cellspacing="1">
 							<tr>
 							    <td>First Name:*</td>
-							    <td class="wider"><input type="text" id="firstname" name="firstname" ></td>
+							    <td class="wider"><input type="text" id="firstname" name="firstname" class="validate[required]" ></td>
 							</tr>
 							<tr>
 							    <td>Last Name:*</td>
@@ -213,7 +226,7 @@ $(document).ready(function(){
 							</tr>
 							<tr>
 							    <td>Store Name:</td>
-							    <td><input type="text" id="6" name="optinemail"></td>
+							    <td><select id="storename" name="storename" size="1" class="validate(selectstore)"  onChange="accountNames();"></td>
 							</tr>
 							<tr>
 							    <td>Store Number /<br />Location:</td>
