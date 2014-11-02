@@ -1,5 +1,5 @@
 <?php
-$to = "!!!!!!!!!!!!!!!!!";
+$to = "babyaligators@comcast.net";
 $subject = "Bose &ldquo;Bring It Home!&rdquo; Program – Enrollment Confirmation";
 
 $message = "
@@ -10,7 +10,7 @@ $message = "
 
 <body>
 <div>
-<img src="/assets/images/hero.jpg" alt="hero" style="width:100%;" />
+<img src="/assets/images/hero.jpg" alt="hero" style="width:50%;" />
 </div>
 
     <p>Bose and its promotion partner Promosis, Inc. sent you this message. To ensure delivery to your inbox (not bulk or spam folders), please add <a href="mailto:bringithome@email-hub.com">bringithome@email-hub.com</a> to your address book.</p>
