@@ -1,5 +1,5 @@
 <?php
-$to = "!!!!!!!!!!!!!!!!!";
+$to = "$_REQUEST['email']";
 $subject = "Bose &ldquo;Bring It Home!&rdquo; Program – Enrollment Confirmation";
 
 $message = "
@@ -13,9 +13,9 @@ $message = "
 <img src="/assets/images/hero.jpg" alt="hero" style="width:100%;" />
 </div>
 
-    <p>Bose et leur partenaire promotionnel Promosis, Inc. vous adressent ce message.  Pour assurer la réception de nos messages dans votre messagerie (non pas votre dossier ordure ou dossier en bloc), merci d’ajouter l’adresse suivante à votre carnet d’adresses <a href="mailto:bringithome@email-hub.com">bringithome@email-hub.com</a>.</p>
+    <p>Bose et leur partenaire promotionnel Promosis, Inc. vous adressent ce message.  Pour assurer la réception de nos messages dans votre messagerie (non pas votre dossier ordure ou dossier en bloc), merci d’ajouter l’adresse suivante à votre carnet d’adresses bringithome@email-hub.com.</p>
 
-    <p>Cher/Chère [@@@@@@@@@@@@@@@@first name@@@@@@@@@@@@@@@@],<br />
+    <p>Cher/Chère [$_REQUEST['firstname']],<br />
     <br />
     Merci de vous inscrire au programme de ventes &#171; Gagnez-moi &#187;  qui vous donne la chance de remporter un système de musique SoundTouch&#8482; de Bose&#174;.</p>
 
@@ -24,7 +24,7 @@ $message = "
     Si vous vous qualifiez pour un prix, celui-ci vous parviendra à l’adresse que vous avez fournie au moment de votre inscription au programme.  Si votre adresse d’expédition a été modifiée depuis votre inscription, veuillez nous en aviser.</p>
 
    <div>**********</div><br />
-    <div>Votre adresse courriel d’inscription est la suivante:  [@@@@@@@@@@@@@@email address@@@@@@@@@@@@@@@@]</div><br />
+    <div>Votre adresse courriel d’inscription est la suivante:  [$_REQUEST['email']]</div><br />
     <div>***********</div>
     <br />
     Encore une fois, merci de prendre part au programme et bonne chance!<br />
