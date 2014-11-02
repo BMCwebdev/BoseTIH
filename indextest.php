@@ -263,6 +263,12 @@
 							</table>
 							
 							<div class="captchadiv">
+							
+							<script type="text/javascript">
+var RecaptchaOptions = {
+   lang : 'fr',
+};
+</script>
 								<?php
 								
 								require_once('recaptchalib.php');
