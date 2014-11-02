@@ -5,7 +5,7 @@ $subject = "Bose &ldquo;Bring It Home!&rdquo; Program – Enrollment Confirmatio
 $message = "
 <html>
 <head>
-    <title>Programme &#171; Gagnez-moi &#187; de Bose &ndash; confirmation de votre inscription</title>
+    <title></title>
 </head>
 
 <body>
