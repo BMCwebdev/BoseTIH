@@ -10,4 +10,6 @@ $result = welcomeEmailEN($firstname,$email);
 
 print("email sent was = " . $result);
 
+$resultFR = welcomeEmailFR($firstname, $email);
+print("french email sent was = " . $resultFR);
 ?>

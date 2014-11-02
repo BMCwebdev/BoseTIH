@@ -218,10 +218,45 @@ function welcomeEmailEN($firstname, $email)
 	$message .= "If your shipping address has changed since you enrolled, you must let us know the new address.\n\n\n";
 
 	$message .= "**********\n";
-	$message .= sprintf("Your enrolled E-mail address is: %s", $email);
+	$message .= sprintf("Your enrolled E-mail address is: %s\n\n", $email);
 	$message .= "***********\n\n";
 	$message .= "Thanks again for joining our promotion, and good luck!\n\n\n";
 	$message .= "[Official Rules link]\n\n\n";
+	
+	// mail this out...
+	$headers = "From: bringithome@email-hub.com";
+
+	$result = mail($email,$subject,$message,$headers);
+	return $result;
+
+}
+function welcomeEmailFR($firstname, $email)
+{
+	$subject = "Programme « Gagnez-moi » de Bose – confirmation de votre inscription";
+
+	$message = "Bose et leur partenaire promotionnel Promosis, Inc. vous adressent ce message.\n";
+	$message .= "Pour assurer la réception de nos messages dans votre messagerie (non pas votre dossier ordure ou dossier en bloc),\n";
+	$message .= "merci d’ajouter l’adresse suivante à votre carnet d’adresses bringithome@email-hub.com .\n\n";
+	
+
+	$message .= sprintf("Cher/Chère %s,\n",$firstname);
+
+	$message .= "Merci de vous inscrire au programme de ventes « Gagnez-moi »  qui vous donne la chance de \n";
+	$message .= "remporter un système de musique SoundTouch™ de Bose ®. \n";
+	$message .= "Identifiez-vous sur le site pour soumettre chacune de vos ventes d'un système SoundTouch™ admissible.\n\n";
+
+	$message .= "Si vous vous qualifiez pour un prix, celui-ci vous parviendra à l’adresse que vous avez fournie \n";
+	$message .= "au moment de votre inscription au programme.  Si votre adresse d’expédition a été modifiée depuis\n";
+	$message .="votre inscription, veuillez nous en aviser.\n\n\n";
+
+	$message .="**********\n";
+	$message .= sprintf("Votre adresse courriel d’inscription est la suivante : %s\n", $email);
+	$message .= "***********\n\n";
+	
+	$message .= "Encore une fois, merci de prendre part au programme et bonne chance!\n\n";
+	
+	
+	$message .="[Official Rules link]";
 	
 	// mail this out...
 	$headers = "From: bringithome@email-hub.com";
