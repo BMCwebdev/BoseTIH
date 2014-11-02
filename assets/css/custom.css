@@ -16,6 +16,9 @@ body {
 		.captchadiv {
 			left:-26px;
 		}
+		.select[multiple], select[size] {
+			width: 36%;
+		}
     }
 
     /* Extra Small Devices, Phones */ 
