@@ -258,7 +258,7 @@
 							</table>
 							
 							
-							<div style="position:relative">
+							<div class="captchadiv">
 <?php
 
 require_once('recaptchalib.php');
