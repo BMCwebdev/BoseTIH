@@ -32,6 +32,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+<script language="javascript" type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
 <script language="javascript" type="text/javascript">
     // bring it home : 31-OCT-2014
     // chad nale chad.nale@gmail.com
@@ -40,8 +41,48 @@
     {
        document.getElementById("form1").submit();
     }
+    function getStoreNumber()
+    {
+      var selectedAccount = document.getElementById("storename").value;
+      if (null != selectedAccount) {
+	$.ajax({
+	  type: "POST",
+	  url: "storenames.php",
+	  data: { accountname: selectedAccount }
+	})
+	  .done(function( msg ) {
+	    $("select#storenumber").html(msg);
+	  });
+	  
+      }
+    }
+  
+  $(document).ready(function(){
+    var Input = $('input[name=kp1_description]');
+    var default_value = Input.val();
+
+    Input.focus(function() {
+        if(Input.val() == default_value) Input.val("");
+    }).blur(function(){
+        if(Input.val().length == 0) Input.val(default_value);
+    });
     
-</script>
+    // fetch list of account names....
+    fetchAccountName();
+  });
+  // we need the list of account names
+  function fetchAccountName()
+  {
+   $.ajax({
+  type: "POST",
+  url: "accountnames.php",
+  data: { name: "John", location: "Boston" }
+})
+  .done(function( msg ) {
+    $("select#storename").html(msg);
+  });
+  }
+ </script>
 
 
 	</head>
@@ -136,11 +177,11 @@
 							</tr>							
 							<tr>
 							    <td class="shorten">Nom du magasin</td>
-							    <td><input type="text" id="storename" name="storename" ></td>
+							    <td><select id="storename" name="storename" size="1" class="validate(selectstore)"  onChange="javascript:getStoreNumber();"></td>
 							</tr>
 							<tr>
 							    <td class="shorten">Numéro du <br />magasin / Lieu</td>
-							    <td><input type="text" id="storenumber" name="storenumber" ></td>
+							    <td><select id="storenumber" name="storenumber"></select></td>
 							</tr>
 							<tr>
 							<tr>
@@ -159,7 +200,7 @@
 					<div class="greybox">
 					<div class="enrollnow2"><p>INSCRIT? CONNECTEZ-VOUS POUR DÉCLARER VOS VENTES</p></div>
 						<div class="greypadding">					
-							<form id="form1" name="form1" action="processform.php" method="post">
+							<form id="form1" name="form1" action="" method="">
 							<div class="form-group">
 							<input type="hidden" id="week" name="week" value="9"/>
 							<table border="0" padding="1" cellspacing="1">
