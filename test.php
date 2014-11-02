@@ -3,14 +3,8 @@
 // chad nale chad.nale@gmail.com
 require "site.inc";
 
-$accountNames = getUniqueAccountNames();
-
-print($accountNames);
-
-//SEARS HOLDING COMPANY
-$stores = getStoresForAccount("BRANDSMART USA");
-
-print($stores);
+$firstname = "chad";
+$email = "chad.nale@gmail.com";
 
 
 

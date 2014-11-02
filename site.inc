@@ -204,6 +204,31 @@ function getJSONData()
 	//$json_string = json_encode($jsonStr, JSON_PRETTY_PRINT);
 	print($jsonStr);
 }
+
+function welcomeEmailEN($firsname, $email)
+{
+	$subject = "Bose 'Bring It Home!' Program – Enrollment Confirmation";
+	$message = "Bose and its promotion partner Promosis, Inc. sent you this message. \n";
+	$message .= "To ensure delivery to your inbox (not bulk or spam folders), please add bringithome@email-hub.com to your address book.\n\n";
+	$message .= sprintf("Dear [%s],\n\n", $firstname);
+	$message .= "Thanks for enrolling in the Bose® “Bring It Home!” SoundTouch™ systems sales program.\n";
+	$message .= "Log-in to the site to submit each of your sales of a qualifying SoundTouch(TM) system\n\n";
+
+	$message .= "If you qualify for a prize, it will be shipped to the address supplied during program enrollment.\n";
+	$message .= "If your shipping address has changed since you enrolled, you must let us know the new address.\n\n\n";
+
+	$message .= "**********\n";
+	$message .= sprintf("Your enrolled E-mail address is: [%s]", $email);
+	$message .= "***********\n\n";
+	$message .= "Thanks again for joining our promotion, and good luck!\n\n\n";
+	$message .= "[Official Rules link]\n\n\n";
+	
+	// mail this out...
+	$headers = "From: bringithome@email-hub.com";
+
+	mail($email,$subject,$message,$headers);
+
+}
 ?>
 
 
