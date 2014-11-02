@@ -198,6 +198,18 @@ table {
 	font-family: "Bose Gothic";
 }
 
+#form2 .btn {
+	max-width: 85px;
+    width: 45%;
+    margin-bottom: 10px;
+	font-family: "Bose Gothic";
+
+}
+
+#form2 {
+	font-family: "Bose Gothic";
+}
+
 .btn-primary {
     background-color: #004380;
     border-color: #004380;

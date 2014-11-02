@@ -20,8 +20,7 @@
 
 
 	<link type="text/css" href="assets/css/validationEngine.jquery.css" rel="stylesheet" />
-	<script src="assets/js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -57,13 +56,6 @@ $(document).ready(function(){
 })​
  </script>
 
-	<script>
-		jQuery(document).ready(function(){
-			// binds form submission and fields to the validation engine
-			jQuery("#form1").validationEngine();
-		});
-            
-	</script>
 
 
 	</head>
@@ -284,5 +276,15 @@ $(document).ready(function(){
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		jQuery(document).ready(function(){
+			// binds form submission and fields to the validation engine
+			jQuery("#form1").validationEngine();
+		});
+            
+	</script>
+
 	</body>
 	</html>
