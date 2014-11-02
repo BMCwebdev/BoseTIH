@@ -254,7 +254,7 @@
 							    <td>Please send me <br />Bose email <br />communications:</td>
 							    <td><input type="checkbox" id="optinemail" name="optinemail" value="1"></td>
 							</tr>
-							<div style="position:relative;"
+							<div style="position:relative;">
 <?php
 
 require_once('recaptchalib.php');
