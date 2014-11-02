@@ -17,10 +17,10 @@ body {
 			left:-26px;
 		}
 		.select[multiple], select[size] {
-			width: 36%;
+			width: 90%;
 		}
 		#storenumber {
-			width: 36%;
+			width: 90%;
 		}
     }
 
