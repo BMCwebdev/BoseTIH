@@ -255,7 +255,7 @@
 							    <td><input type="checkbox" id="optinemail" name="optinemail" value="1"></td>
 							</tr>
 
-<tr style="position:relative"><td>
+<tr style="position:relative"><td></td><td>
 <?php
 
 require_once('recaptchalib.php');
