@@ -2,7 +2,7 @@
 $to = "!!!!!!!!!!!!!!!!!";
 $subject = "Bose &ldquo;Bring It Home!&rdquo; Program – Enrollment Confirmation";
 
-$message = "
+$message = '
 <html>
 <head>
     <title>Bose &ldquo;Bring It Home!&rdquo; Program – Enrollment Confirmation</title>
@@ -34,7 +34,7 @@ $message = "
     Click here to be removed from our email list.</p>
 </body>
 </html>
-";
+';
 
 // Always set content-type when sending HTML email
 $headers = "MIME-Version: 1.0" . "\r\n";
