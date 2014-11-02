@@ -298,9 +298,6 @@ table {
 .wider {
 	display: inline-block;
 }
-.select[multiple], select[size] {
-    width: 90%;
-}
 #state {
 	width: 90%;
 }
