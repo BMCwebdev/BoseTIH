@@ -271,3 +271,6 @@ table {
 .select[multiple], select[size] {
     width: 90%;
 }
+#state {
+	width: 90%;
+}
