@@ -254,9 +254,13 @@
 							    <td>Please send me <br />Bose email <br />communications:</td>
 							    <td><input type="checkbox" id="optinemail" name="optinemail" value="1"></td>
 							</tr>
-
+<!--
+							<tr>
+							<td>&nbsp;</td>
+							<td><input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">
+							</tr>
+-->
 							</table>
-							
 							
 							<div class="captchadiv">
 								<?php
@@ -291,10 +295,7 @@
 
 								<input type="button" id="btnsubmit" class="btn btn-primary" name="btnsubmit" onclick="javascript:processForm();" value="Submit">
 							</div>
-
-
-
-
+							
 							</form>
 					</div>
 					</div>
