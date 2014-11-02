@@ -82,38 +82,40 @@ function emailExists($email)
 }
 function getUniqueAccountNames()
 {
+	// going to change this to return <options>
 	$mysqli = getDBConnection();
 	$myArray = array();
-	$jsonStr = "";
+	$optionStr = "<option></option>";
 	if ($result = $mysqli->query("SELECT distinct account from stores order by account ASC"))
 	{
 		while($row = $result->fetch_array(MYSQL_ASSOC))
 		{
-			$myArray[] = $row;
+			$optionStr .= sprintf("<option>%s</option>", $row["account"]);
+			//$myArray[] = $row;
 		}
-		$jsonStr = $jsonStr . json_encode($myArray);
+		//$jsonStr = $jsonStr . json_encode($myArray);
 	}
 
 	$result->close();
 	$mysqli->close();
 	// now print out the json string
 	//$json_string = json_encode($jsonStr, JSON_PRETTY_PRINT);
-	return $jsonStr;
+	return $optionStr;
 }
 function getStoresForAccount($accountname)
 {
-	print($accountname);
 	
 	$mysqli = getDBConnection();
 	$myArray = array();
 	$jsonStr = "";
-	if ($result = $mysqli->query("SELECT * from stores where account='" . $accountname . "'"))// where account='" . $accountname . "'"))
+	if ($result = $mysqli->query("SELECT * from stores where account='" . $accountname . "' order by state, city"))// where account='" . $accountname . "'"))
 	{
 		while($row = $result->fetch_array(MYSQL_ASSOC))
 		{
-			$myArray[] = $row;
+			$jsonStr .= sprintf("<option value='%s'>%s - %s - %s</option>",$row["sapnumber"], $row["address1"], $row["city"], $row["state"]);
+			//$myArray[] = $row;
 		}
-		$jsonStr = $jsonStr . json_encode($myArray);
+		//$jsonStr = $jsonStr . json_encode($myArray);
 	}
 
 	$result->close();
